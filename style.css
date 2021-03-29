@@ -1,0 +1,12 @@
+.galerija {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.galerija__bilde {
+  width: 320px;
+  height: 320px;
+
+  background-size: cover;
+  background-position: center center;
+}
