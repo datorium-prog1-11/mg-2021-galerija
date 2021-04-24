@@ -203,6 +203,16 @@ CSS:
 
 ## 3. Uzdevums: Izveidot JS failu un savienot ar HTML
 
+```html
+<html>
+  <!-- ... -->
+  <body>
+    <!-- ... -->
+    <script src="./script.js"></script>
+  </body>
+</html>
+```
+
 ---
 
 # 3. Nodarbība
