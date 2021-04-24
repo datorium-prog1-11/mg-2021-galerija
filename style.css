@@ -1,5 +1,17 @@
+h1 {
+  text-align: center;
+}
+
+.saturs {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .galerija {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .galerija__bilde {
@@ -7,4 +19,11 @@
   height: 320px;
   background-size: cover;
   background-position: center center;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 13px;
+  margin-right: 13px;
+
+  display: block;
 }
