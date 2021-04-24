@@ -347,3 +347,50 @@ for (let bilde of galerijaBildeSaraksts) {
   max-width: 95%;
 }
 ```
+
+## Reaģējam uz peli
+
+Lai parādītu lietotājam, ka bildes ir interaktīvas, reaģējam, kad peles kursors ir uz bildes:
+
+```css
+.galerija__bilde:hover {
+    opacity: 70%;
+    transition: opacity 0.2s;
+}
+```
+
+## Uzdevums: Aizvērt Pop-up bildi as `esc`
+
+- Klausīties uz `keyup` eventu dokumentam - `document...`
+- Pārbaudām taustiņu ar `event.key`
+- Sākam ar `console.log`
+
+## Pārvietojamies pa bildēm ar bultiņu taustiņiem
+
+### Uzdevums: Pārvietojamies pa bildēm ar indeksu
+
+- Izmantojam `for` ciklu
+- Izmantojam `saraksts.length`
+
+### Saglabājam galerijas stāvokli
+
+- Fiksējam katras bildes indeksu
+- Saglabājam atvērto bildi
+
+```js
+const galerija = {
+  atverta: false,
+  bilde: 1
+}
+```
+
+### Uzdevums: Kad tiek nospiests uz biltas pārvietojamies uz nākamo bildi
+
+- Izmantojam to pašu `keyup` funkciju
+- Pārbaudām taustiņu ar `event.key`
+
+### Uzdevums: Pārbaudām galerijas robežas pirms pārslēgt bildi
+
+- Ja esam galerijas sākumā, nepārslēdzam uz iepriekšējo bildi
+- Ja esam galerijas beigās, nepārslēdzam uz nākamo bildi
+- Ja galerija nav atvērta, nemēģinām to aizvērt
