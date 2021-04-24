@@ -139,6 +139,18 @@ Ieliekam sekojošas atkāpes starp elementiem:
 - no bildes augšas apakšas: 25px
 - no bildes kreisā un labā sāna: 13px
 
+### Risinājums
+
+```css
+.galerija__bilde {
+  /* ... */
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 13px;
+  margin-right: 13px;
+}
+```
+
 ## Lapas satuar centrēšana
 
 ```css
@@ -165,6 +177,28 @@ Pārvēršam bildes elementu par linku `<a>` uz bildi, kas ir fonā. Linkam jāa
 Pārvērst šos elementus:
 ```html
 <div class="galerija__bilde" style="background-image: url('https://source.unsplash.com/JS2IVAyMsM0/640x960');"></div>
+```
+
+### Risinājums:
+
+HTML:
+
+```html
+<a
+    class="galerija__bilde"
+    style="background-image: url('https://source.unsplash.com/JS2IVAyMsM0/640x960');"
+    href="https://source.unsplash.com/JS2IVAyMsM0/640x960"
+    target="_blank"
+></a>
+```
+
+CSS:
+
+```css
+.galerija__bilde {
+  /* ... */
+  display: block;
+}
 ```
 
 ## 3. Uzdevums: Izveidot JS failu un savienot ar HTML
