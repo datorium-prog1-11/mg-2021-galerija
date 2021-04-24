@@ -18,18 +18,28 @@ Main - lapas galvenais saturs.
 <main></main>
 ```
 
-## 2. Uzdevums
+## 2. Uzdevums: Uztaisīt Attēlu no Unsplash
 
-Uztaisīt Attēlu no Unsplash
+### Risinājums
 
 https://source.unsplash.com/{id}/{size}
 
 
-## 3. Iemest bildes no unsplash
+## 3. Uzdevums: Iemest bildes no unsplash
 
 Bildēm jābūt tādā formātā, lai tās uzreiz var izmantot `<img>` elementā.
 
-- https://source.unsplash.com/JS2IVAyMsM0/640x960
+### Risinājums
+
+- https://source.unsplash.com/lYQAgS8nb0o/640x960
+- https://source.unsplash.com/CG6Gd__QIOY/640x472
+- https://source.unsplash.com/kLfkVa_4aXM/640x427
+- https://source.unsplash.com/zF2h2QHtwx0/640x960
+- https://source.unsplash.com/WgThxysV6YE/640x364
+- https://source.unsplash.com/Xq1ntWruZQI/640x960
+- https://source.unsplash.com/hfNg3dPdaC0/640x958
+- https://source.unsplash.com/_RpPMkqTTTg/640x426
+- https://source.unsplash.com/TrB4UA1rDeQ/640x426
 
 
 ## Attēlu saraksts no unsplash
@@ -96,6 +106,5 @@ Div elementi pēc noklusējuma sakārtojas viens zem otra.
 ```css
 .galerija {
   display: flex;
-  flex-wrap: wrap;
 }
 ```
