@@ -108,3 +108,178 @@ Div elementi pēc noklusējuma sakārtojas viens zem otra.
 .galerija {
   display: flex;
 }
+```
+
+---
+
+# 2. Nodarbība
+
+## Flexbox elementu sakārtošana
+
+Automātiski pārnesam elementus jaunā rindā:
+
+```css
+.galerija {
+  flex-wrap: wrap;
+}
+```
+
+Ievērot vienādas atstarpes starp elementiem:
+
+```css
+.galerija {
+  justify-content: space-evenly;
+}
+```
+
+## 1. Uzdevums: Atkāpes starp elementiem
+
+Ieliekam sekojošas atkāpes starp elementiem:
+
+- no bildes augšas apakšas: 25px
+- no bildes kreisā un labā sāna: 13px
+
+## Lapas satuar centrēšana
+
+```css
+.saturs {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+Virsraksta Testa iecentrēšana, lai labāk izskatās
+
+```css
+h1 {
+  text-align: center;
+}
+
+```
+
+## 2. Uzdevums: Saites uz bildēm
+
+Pārvēršam bildes elementu par linku `<a>` uz bildi, kas ir fonā. Linkam jāatveras jaunā lapā.
+
+Pārvērst šos elementus:
+```html
+<div class="galerija__bilde" style="background-image: url('https://source.unsplash.com/JS2IVAyMsM0/640x960');"></div>
+```
+
+## 3. Uzdevums: Izveidot JS failu un savienot ar HTML
+
+---
+
+# 3. Nodarbība
+
+## 1. Uzdevums: Atrast HTML elementus JavaScript
+
+- Izmantojam `querySelectorAll` query selector vietā.
+- Izvadīt konsolē visas galerijas bildes.
+
+## Izveidojam jaunu bildi JS
+
+```js
+const popUpBilde = new Image();
+popUpBilde.src = event.target.href;
+
+document.body.appendChild(popUpBilde);
+```
+
+- Izmantojam tikai vienu elementu Pop up bildei, lai mums nebūtu problēma ar daudzu elementu pievienošanu un noņemšanu no lapas.
+
+## Attēlu saraksts un cikls
+
+```js
+for (let bilde of bildeSaraksts) {
+  console.log('bilde', bilde);
+}
+```
+
+## 2. Uzdevums: Atvērt bildi uz klikšķa
+
+- Reaģējam uz klikšķa uz katras bildes
+- Pēc klikšķa nomainām `src` atribūta vērtību mūsu "pop-up" bildei uz to bildi uz kuras mēs uzspiedām
+- Izmantojam `event.target`
+
+## Bloķējam bildes atvēršanu jaunā lapā
+
+- Linka (`a`) noklusētā darbība, ir atvērt saiti `href`
+- Tas atļauj galeriju lietot arī cilvēkiem kam nestrādā JavaScript
+- Tā kā mums jau bilde atveras "pop-up"ā tad jaunā lapā vairs nevajag atvērt.
+
+```js
+bilde.addEventListener('click', function (event) {
+  event.preventDefault();
+  /* ... */
+});
+```
+
+## Pop-up bildes pozicionēšana
+
+- Bildes pozīciju un izskatu mēs nosakām ar CSS
+- Izveidojam klasi: `galerija__bilde--popup`
+- Piešķiram šo klasi mūsu jaunajam bildes elementam caur JS
+
+```js
+popUpBilde.classList.add('galerija__bilde--popup');
+```
+
+- Novietojam bildi virs pārējiem elementiem
+- Iecentrējot to pret ekrānu
+
+```css
+.galerija__bilde--popup {
+  position: fixed; /* pāri visam */
+  top: 25px;
+}
+```
+
+## Pop-up bildes iecentrēšana
+
+- Izmantojam `top` un `left` pozīcijas parametrus
+- Iecentrējam bildes pozicionēšanas punktu (`translate`)
+
+  > Pēc noklusējuma bildi pozicionē pēc tās augšējā kreisā tūra
+
+```css
+.galerija__bilde--popup {
+  /* ... */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+## 3. Uzdevums: Aizvērt bildi uz klikšķa
+
+- Kad "Pop-up" bildes uzklikšķina, tai jāpazūd
+- Izmantojam: `document.body.removeChild()`
+
+## Pievienojam bildi arī tikai uz klikšķa
+
+- Pārvietojam `document.body.appendChild(galerijaBildePopup);`
+- Iekšā mūsu bildes atvēršanas klikšķa funkcjiā:
+
+```js
+for (let bilde of galerijaBildeSaraksts) {
+  bilde.addEventListener('click', function (event) {
+    /* ... */
+    document.body.appendChild(galerijaBildePopup);
+  });
+}
+```
+
+## Ierobežojam Pop-up bildes izmēru
+
+- Lai pop-up bilde neiziet ārpus ekrāna robežām, ja tā ir par lielu
+- Ievērojam nelielu atkāpi, lai izskatītos smukāk
+
+```css
+.galerija__bilde--popup {
+  /* ... */
+  max-height: 95%;
+  max-width: 95%;
+}
+```
