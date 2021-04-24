@@ -212,6 +212,13 @@ CSS:
 - Izmantojam `querySelectorAll` query selector vietā.
 - Izvadīt konsolē visas galerijas bildes.
 
+### Risinājums
+
+```js
+let bildeSaraksts = document.querySelectorAll('.galerija__bilde');
+console.log(bildes);
+```
+
 ## Izveidojam jaunu bildi JS
 
 ```js
@@ -236,6 +243,16 @@ for (let bilde of bildeSaraksts) {
 - Reaģējam uz klikšķa uz katras bildes
 - Pēc klikšķa nomainām `src` atribūta vērtību mūsu "pop-up" bildei uz to bildi uz kuras mēs uzspiedām
 - Izmantojam `event.target`
+
+### Risinājums
+
+```js
+bilde.addEventListener('click', function (event) {
+  // Event target ir tā bilde uz kā mēs uzspiedām
+  let bildeKlik = event.target;
+  popUpBilde.src = bildeKlik.href;
+});
+```
 
 ## Bloķējam bildes atvēršanu jaunā lapā
 
@@ -290,6 +307,16 @@ popUpBilde.classList.add('galerija__bilde--popup');
 
 - Kad "Pop-up" bildes uzklikšķina, tai jāpazūd
 - Izmantojam: `document.body.removeChild()`
+
+### Risinājums:
+
+```js
+/* ... */
+/* Pēc bildes elementa izveides, bet pirms cikla */
+galerijaBildePopup.addEventListener('click', function () {
+  document.body.removeChild(galerijaBildePopup);
+});
+```
 
 ## Pievienojam bildi arī tikai uz klikšķa
 
