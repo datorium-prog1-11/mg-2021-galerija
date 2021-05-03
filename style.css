@@ -26,6 +26,12 @@ h1 {
   margin-right: 13px;
 
   display: block;
+
+  transition: opacity 0.2s;
+}
+
+.galerija__bilde:hover {
+  opacity: 60%;
 }
 
 .galerija__bilde--popup {
@@ -33,4 +39,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  max-width: 97%;
+  max-height: 95%;
 }

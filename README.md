@@ -348,7 +348,7 @@ for (let bilde of galerijaBildeSaraksts) {
 }
 ```
 
-## Reaģējam uz peli
+## Reaģējam uz peli (hover)
 
 Lai parādītu lietotājam, ka bildes ir interaktīvas, reaģējam, kad peles kursors ir uz bildes:
 
