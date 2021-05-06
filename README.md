@@ -383,6 +383,8 @@ Lai parādītu lietotājam, ka bildes ir interaktīvas, reaģējam, kad peles ku
 - Izmantojam `for` ciklu
 - Izmantojam `saraksts.length`
 
+# 5. Nodarbība
+
 ### Saglabājam galerijas stāvokli
 
 - Fiksējam katras bildes indeksu
