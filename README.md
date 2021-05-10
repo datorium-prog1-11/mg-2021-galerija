@@ -365,6 +365,8 @@ Lai parādītu lietotājam, ka bildes ir interaktīvas, reaģējam, kad peles ku
 - Pārbaudām taustiņu ar `event.key`
 - Sākam ar `console.log`
 
+# 5. Nodarbība:
+
 ## Pārvietojamies pa bildēm ar bultiņu taustiņiem
 
 ### Uzdevums: Pārvietojamies pa bildēm ar indeksu
@@ -384,6 +386,7 @@ const galerija = {
 }
 ```
 
+# 6. Nodarbība
 ### Uzdevums: Kad tiek nospiests uz biltas pārvietojamies uz nākamo bildi
 
 - Izmantojam to pašu `keyup` funkciju
