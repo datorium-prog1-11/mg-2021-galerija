@@ -39,9 +39,21 @@ for (let i = 0; i < galerijaBildeElems.length; i = i + 1) {
   });
 }
 
+function parslegtBildi(nakamaBildeNr) {
+  let nakamaBilde = galerijaBildeElems[nakamaBildeNr];
+
+  bildePopUp.src = nakamaBilde.href;
+  galerijaStavoklis.bildeNr = nakamaBildeNr;
+}
 
 document.addEventListener('keyup', function(event) {
   // console.log('key', event.key);
+
+  if (event.key == 'ArrowRight' && galerijaStavoklis.bildeAtverta) {
+    parslegtBildi(galerijaStavoklis.bildeNr + 1);
+  } else if (event.key == 'ArrowLeft' && galerijaStavoklis.bildeAtverta) {
+    parslegtBildi(galerijaStavoklis.bildeNr - 1);
+  }
 
   if (event.key == 'Escape' && galerijaStavoklis.bildeAtverta) {
     aizvertBildi(bildePopUp);

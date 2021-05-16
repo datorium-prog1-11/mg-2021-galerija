@@ -387,10 +387,15 @@ const galerija = {
 ```
 
 # 6. Nodarbība
+
 ### Uzdevums: Kad tiek nospiests uz biltas pārvietojamies uz nākamo bildi
 
 - Izmantojam to pašu `keyup` funkciju
 - Pārbaudām taustiņu ar `event.key`
+
+# 7. Nodarbība
+
+### Uzdevums: Refactor `keyup` event
 
 ### Uzdevums: Pārbaudām galerijas robežas pirms pārslēgt bildi
 
