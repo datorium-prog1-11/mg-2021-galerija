@@ -49,9 +49,10 @@ function parslegtBildi(nakamaBildeNr) {
 document.addEventListener('keyup', function(event) {
   // console.log('key', event.key);
 
-  if (event.key == 'ArrowRight' && galerijaStavoklis.bildeAtverta) {
+  // atrodam pēdējo bildi                                                               8          [0,1,2...8].length = 9
+  if (event.key == 'ArrowRight' && galerijaStavoklis.bildeAtverta && galerijaStavoklis.bildeNr < galerijaBildeElems.length - 1) {
     parslegtBildi(galerijaStavoklis.bildeNr + 1);
-  } else if (event.key == 'ArrowLeft' && galerijaStavoklis.bildeAtverta) {
+  } else if (event.key == 'ArrowLeft' && galerijaStavoklis.bildeAtverta && galerijaStavoklis.bildeNr > 0) {
     parslegtBildi(galerijaStavoklis.bildeNr - 1);
   }
 
