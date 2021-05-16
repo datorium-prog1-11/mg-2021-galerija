@@ -49,14 +49,14 @@ function parslegtBildi(nakamaBildeNr) {
 document.addEventListener('keyup', function(event) {
   // console.log('key', event.key);
 
-  // atrodam pēdējo bildi                                                               8          [0,1,2...8].length = 9
-  if (event.key == 'ArrowRight' && galerijaStavoklis.bildeAtverta && galerijaStavoklis.bildeNr < galerijaBildeElems.length - 1) {
-    parslegtBildi(galerijaStavoklis.bildeNr + 1);
-  } else if (event.key == 'ArrowLeft' && galerijaStavoklis.bildeAtverta && galerijaStavoklis.bildeNr > 0) {
-    parslegtBildi(galerijaStavoklis.bildeNr - 1);
-  }
-
-  if (event.key == 'Escape' && galerijaStavoklis.bildeAtverta) {
-    aizvertBildi(bildePopUp);
+  if (galerijaStavoklis.bildeAtverta) {
+    // atrodam pēdējo bildi                             8          [0,1,2...8].length = 9
+    if (event.key == 'ArrowRight' && galerijaStavoklis.bildeNr < galerijaBildeElems.length - 1) {
+      parslegtBildi(galerijaStavoklis.bildeNr + 1);
+    } else if (event.key == 'ArrowLeft' && galerijaStavoklis.bildeNr > 0) {
+      parslegtBildi(galerijaStavoklis.bildeNr - 1);
+    } else if (event.key == 'Escape') {
+      aizvertBildi(bildePopUp);
+    }
   }
 });
